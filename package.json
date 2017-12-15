@@ -4,7 +4,8 @@
   "description": "Web app to find meeting places between members of a group",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "./node_modules/.bin/webpack -d && nodemon src/app.js"
   },
   "repository": {
     "type": "git",
