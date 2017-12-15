@@ -19,18 +19,25 @@ const config = {
     },
     module: {
         rules: [{
-            test: /\.jsx?$/,
-            use: ['babel-loader'],
-            include: path.join(__dirname, 'src')
-        }]
+                test: /\.jsx?$/,
+                use: ['babel-loader'],
+                include: path.join(__dirname, 'src')
+            },
+            {
+                test: /\.css$/,
+                loader: 'style-loader'
+            },
+            {
+                test: /\.css$/,
+                loader: 'css-loader',
+                query: {
+                    modules: true,
+                    localIdentName: '[name]__[local]___[hash:base64:5]'
+                }
+            }
+        ]
     }
-    // module: {
-    //     loaders: [{
-    //         test: /\.jsx?/,
-    //         include: APP_DIR,
-    //         loader: 'babel-loader'
-    //     }]
-    // }
+
 };
 
 module.exports = config;
